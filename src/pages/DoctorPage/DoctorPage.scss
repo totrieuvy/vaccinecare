@@ -1,0 +1,369 @@
+.doctor-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h1 {
+      margin: 0;
+      color: #1890ff;
+      font-size: 24px;
+    }
+
+    .logout-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  .steps-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    min-height: 500px;
+  }
+
+  .step-container {
+    width: 100%;
+
+    .search-container {
+      margin-bottom: 20px;
+
+      .search-input {
+        max-width: 400px;
+      }
+
+      .search-icon {
+        margin-right: 8px;
+      }
+    }
+
+    .patient-table {
+      margin-bottom: 20px;
+
+      .ant-table-thead > tr > th {
+        background-color: #f0f5ff;
+        color: #1890ff;
+      }
+    }
+
+    .patient-header {
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0f0f0;
+
+      h2 {
+        margin-bottom: 8px;
+        color: #1890ff;
+      }
+
+      p {
+        margin: 0;
+        color: #555;
+      }
+    }
+
+    .medical-form {
+      .form-row {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+
+        .ant-form-item {
+          flex: 1;
+          margin-bottom: 0;
+        }
+      }
+
+      .diseases-section {
+        margin: 16px 0;
+        padding: 16px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 16px;
+          color: #333;
+        }
+      }
+    }
+
+    .confirmation-container {
+      h2 {
+        color: #1890ff;
+        margin-bottom: 24px;
+      }
+
+      .confirmation-header {
+        margin-bottom: 24px;
+        padding: 16px;
+        background-color: #f0f7ff;
+        border-radius: 4px;
+
+        h3 {
+          margin-top: 0;
+          color: #1890ff;
+        }
+
+        p {
+          margin: 8px 0 0;
+          color: #555;
+        }
+      }
+
+      .confirmation-section {
+        margin-bottom: 24px;
+        padding: 16px;
+        background-color: #fafafa;
+        border-radius: 4px;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 16px;
+          color: #333;
+        }
+
+        .confirmation-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 16px;
+
+          .info-item {
+            display: flex;
+            justify-content: space-between;
+
+            .label {
+              font-weight: 500;
+              color: #555;
+            }
+
+            .value {
+              color: #000;
+            }
+          }
+        }
+
+        ul {
+          margin: 0;
+          padding-left: 20px;
+
+          li {
+            margin-bottom: 8px;
+          }
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .vaccination-container {
+      h2 {
+        color: #1890ff;
+        margin-bottom: 24px;
+      }
+
+      .vaccination-details {
+        margin-bottom: 24px;
+        padding: 16px;
+        background-color: #f0f7ff;
+        border-radius: 4px;
+
+        h3 {
+          margin-top: 0;
+          color: #1890ff;
+        }
+
+        p {
+          margin: 8px 0 0;
+          color: #555;
+        }
+      }
+
+      .observation-section {
+        margin-bottom: 24px;
+
+        h3 {
+          margin-bottom: 16px;
+          color: #333;
+        }
+
+        .post-vaccine-form {
+          .reactions-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+            margin-bottom: 16px;
+
+            .ant-form-item {
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    .completion-container {
+      h2 {
+        color: #1890ff;
+        margin-bottom: 24px;
+      }
+
+      .completion-header {
+        text-align: center;
+        margin-bottom: 24px;
+        padding: 24px;
+        background-color: #f6ffed;
+        border-radius: 4px;
+
+        .completion-icon {
+          width: 64px;
+          height: 64px;
+          line-height: 64px;
+          border-radius: 50%;
+          background-color: #52c41a;
+          color: #fff;
+          font-size: 32px;
+          margin: 0 auto 16px;
+        }
+
+        h3 {
+          color: #52c41a;
+          margin-bottom: 16px;
+        }
+
+        p {
+          margin: 8px 0 0;
+          color: #555;
+        }
+      }
+
+      .reactions-summary {
+        margin-bottom: 24px;
+        padding: 16px;
+        background-color: #fafafa;
+        border-radius: 4px;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 16px;
+          color: #333;
+        }
+
+        p {
+          margin: 8px 0;
+        }
+
+        .reactions-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 16px 0;
+
+          .reaction-item {
+            padding: 4px 12px;
+            background-color: #f0f5ff;
+            border-radius: 16px;
+            color: #1890ff;
+          }
+        }
+      }
+
+      .recommendations {
+        padding: 16px;
+        background-color: #fffbe6;
+        border-radius: 4px;
+        margin-bottom: 24px;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 16px;
+          color: #333;
+        }
+
+        ul {
+          margin: 0;
+          padding-left: 20px;
+
+          li {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+
+      .back-button,
+      .next-button,
+      .finish-button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .finish-button {
+        background-color: #52c41a;
+        border-color: #52c41a;
+
+        &:hover,
+        &:focus {
+          background-color: #73d13d;
+          border-color: #73d13d;
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .doctor-page {
+    padding: 12px;
+
+    .step-container {
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .confirmation-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .reactions-section {
+        grid-template-columns: 1fr !important;
+      }
+
+      .navigation-buttons {
+        flex-direction: column-reverse;
+        gap: 12px;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

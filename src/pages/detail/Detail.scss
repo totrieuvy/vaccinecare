@@ -1,0 +1,91 @@
+.vaccine-detail {
+  padding: 40px;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__image-wrapper {
+    width: 50%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__info {
+    padding: 24px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+  }
+
+  &__name {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e60023;
+  }
+
+  &__section {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+      margin: 4px 0;
+
+      strong {
+        color: #333;
+      }
+    }
+  }
+}
+
+.detail-loading,
+.detail-error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Responsive cho thiết bị nhỏ */
+@media (max-width: 768px) {
+  .vaccine-detail__container {
+    flex-direction: column;
+  }
+
+  .vaccine-detail__image-wrapper,
+  .vaccine-detail__info {
+    width: 100%;
+  }
+}

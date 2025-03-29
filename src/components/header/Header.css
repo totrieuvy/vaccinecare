@@ -1,0 +1,124 @@
+/* Header.css */
+.HomePage-Header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
+.HomePage-Header {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px solid #f0f0f0;
+  padding: 2px 20px;
+  transition: all 0.3s ease;
+}
+
+.HomePage-Header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .HomePage-Header-container {
+    justify-content: space-between;
+  }
+}
+
+.HomePage-Header-menu-button {
+  margin-right: 15px;
+}
+
+.HomePage-Header-logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.HomePage-Header-logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.HomePage-Header-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.HomePage-Header-title {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.HomePage-Header-submenu-container {
+  background-color: white;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.HomePage-Header-submenu-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HomePage-Header-menu {
+  border: none;
+}
+
+.HomePage-Header-desktop-menu {
+  flex: 1;
+  background: transparent;
+}
+
+/* Remove bottom border from menu */
+.HomePage-Header-desktop-menu.ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.HomePage-Header-mobile-menu {
+  border: none;
+}
+
+.HomePage-Header-signin-button {
+  margin: 10px 0;
+}
+
+/* Menu item styles */
+.HomePage-Header-menu .ant-menu-item:hover {
+  background-color: #9989c5 !important;
+  color: #fff !important;
+}
+
+.HomePage-Header-menu .ant-menu-item {
+  transition: background-color 0.3s ease;
+}
+
+.HomePage-Header-menu .ant-menu-item-selected {
+  color: #9989c5 !important;
+}
+
+.HomePage-Header-menu .ant-menu-item-active {
+  color: #fff !important;
+}
+
+/* Override Ant Design's default menu bottom border */
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}

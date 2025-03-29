@@ -1,0 +1,303 @@
+// @import "../../sass/variable";
+
+// .container {
+//   padding: 20px;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+
+//   .Login {
+//     width: 100%;
+//     max-width: 400px;
+
+//     .Login__footer__or {
+//       font-size: 16px;
+//       font-weight: bold;
+//       text-align: center;
+//       color: #555;
+//       margin: 15px 0;
+
+//       &::before,
+//       &::after {
+//         content: "";
+//         display: inline-block;
+//         width: 40px;
+//         height: 1px;
+//         background-color: #aaa;
+//         margin: 0 10px;
+//       }
+//     }
+
+//     &__title {
+//       font-size: 1.5rem;
+//       margin-bottom: 30px;
+//       text-align: center;
+//       font-weight: bold;
+//     }
+
+//     &__button {
+//       padding: 15px;
+//       background-color: $mainColor;
+//       color: #fff;
+//       width: 100%;
+//       text-align: center;
+//       border-radius: 5px;
+//       font-size: 16px;
+//       font-weight: bold;
+//       transition: background-color 0.3s ease;
+
+//       &:hover {
+//         background-color: darken($mainColor, 10%);
+//       }
+//     }
+
+//     .ant-form-item-control-input-content {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//     }
+
+//     &__middle {
+//       display: flex;
+//       justify-content: space-between;
+//       margin-top: 20px;
+//       width: 100%;
+//       font-size: 14px;
+//     }
+
+//     &__forgot-password {
+//       text-decoration: none;
+//       color: #000;
+//       transition: color 0.3s, text-decoration 0.3s;
+//       &:hover {
+//         color: darkgray;
+//         text-decoration: underline;
+//       }
+//     }
+
+//     &__register {
+//       text-decoration: none;
+//       color: red;
+//       font-weight: bold;
+//       transition: color 0.3s, text-decoration 0.3s;
+//       &:hover {
+//         color: darkred;
+//         text-decoration: underline;
+//       }
+//     }
+
+//     &__footer {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 15px;
+//       margin-top: 20px;
+
+//       &__google-button {
+//         background-color: #fff;
+//         color: #000;
+//         border: 1px solid #000;
+//         padding: 17px 30px;
+//         font-size: 17px;
+//         font-weight: bold;
+//         border-radius: 5px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 10px;
+//         width: 100%;
+//         min-width: 400px;
+
+//         &:hover {
+//           background-color: rgb(230, 228, 228) !important;
+//           color: #fff;
+//           border-color: gray;
+//         }
+
+//         img {
+//           width: 20px;
+//           height: 20px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@import "../../sass/variable";
+
+.Login {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .Login__footer__or {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #555;
+    margin: 15px 0;
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background-color: #aaa;
+      margin: 0 10px;
+    }
+  }
+
+  &__button {
+    padding: 15px;
+    background-color: $mainColor;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($mainColor, 10%);
+    }
+  }
+
+  .ant-form-item-control-input-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__middle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  &__forgot-password {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s, text-decoration 0.3s;
+    &:hover {
+      color: darkgray;
+      text-decoration: underline;
+    }
+  }
+
+  &__register {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    transition: color 0.3s, text-decoration 0.3s;
+    &:hover {
+      color: darkred;
+      text-decoration: underline;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    &__google-button {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      padding: 17px 30px;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-width: 400px;
+
+      &:hover {
+        background-color: rgb(230, 228, 228) !important;
+        color: #fff;
+        border-color: gray;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 50%;
+  }
+  .Login {
+    padding: 15px;
+
+    .Login__title {
+      font-size: 1.2rem;
+    }
+
+    .Login__footer__or {
+      font-size: 14px;
+    }
+
+    .Login__button {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .Login__middle {
+      flex-direction: column;
+      align-items: center;
+      line-height: 30px;
+    }
+
+    .Login__footer__google-button {
+      min-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .Login {
+    padding: 10px;
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .Login__middle {
+      font-size: 12px;
+    }
+
+    .Login__forgot-password,
+    .Login__back-register {
+      font-size: 12px;
+    }
+  }
+}

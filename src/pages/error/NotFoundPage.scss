@@ -1,0 +1,23 @@
+.NotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  line-height: 40px;
+
+  &__content {
+    &__icon {
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    h2,
+    h4 {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      font-size: 30px;
+    }
+  }
+}

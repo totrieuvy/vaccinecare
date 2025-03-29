@@ -1,0 +1,520 @@
+// Variables
+$primary-color: rgb(101, 85, 143);
+$secondary-color: #ff6b00;
+$light-gray: #f5f5f5;
+$medium-gray: #e0e0e0;
+$dark-gray: #8c8c8c;
+$white: #ffffff;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+$transition-time: 0.3s;
+
+// Mixins
+@mixin card-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform $transition-time, box-shadow $transition-time;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow;
+  }
+}
+
+@mixin section-header($bg-color) {
+  background-color: $bg-color;
+  color: $white;
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $light-gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $medium-gray;
+    border-radius: 20px;
+  }
+}
+
+// Main styles
+.vaccination-section {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    background-color: $light-gray;
+    border-radius: $border-radius;
+    padding: 2rem;
+
+    &__icon {
+      font-size: 3rem;
+      color: $dark-gray;
+      margin-bottom: 1rem;
+    }
+
+    &__text {
+      font-size: 1.1rem;
+      color: $dark-gray;
+      text-align: center;
+      max-width: 400px;
+    }
+  }
+
+  .loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    color: $dark-gray;
+    font-style: italic;
+  }
+
+  .age-group {
+    margin-bottom: 1.5rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    &__header {
+      background: linear-gradient(to right, lighten($primary-color, 35%), lighten($primary-color, 40%));
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: darken($primary-color, 15%);
+      transition: background-color $transition-time;
+      border-left: 4px solid $primary-color;
+
+      &:hover {
+        background: linear-gradient(to right, lighten($primary-color, 30%), lighten($primary-color, 35%));
+      }
+
+      &-text {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          margin-right: 0.5rem;
+          transition: transform $transition-time;
+
+          &--expanded {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &__content {
+      background-color: $white;
+      padding: 1rem;
+      border: 1px solid $medium-gray;
+      border-top: none;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+
+  .vaccine-card {
+    height: 100%;
+    border-radius: $border-radius;
+    overflow: hidden;
+    @include card-shadow;
+
+    &--appropriate {
+      border: 1px solid #52c41a; // Viền xanh khi phù hợp với độ tuổi
+    }
+
+    &__image {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+      border-bottom: 1px solid $medium-gray;
+    }
+
+    &__content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    &__checkbox {
+      margin-top: 4px; // Căn chỉnh checkbox với title
+    }
+
+    &__title-wrapper {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    &__appropriate-tag {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+      color: $dark-gray;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    &__origin {
+      font-size: 0.85rem;
+      color: $dark-gray;
+    }
+
+    &__price {
+      font-weight: 600;
+      color: $primary-color;
+      font-size: 1rem;
+      text-align: right;
+    }
+  }
+
+  .vaccines-sidebar {
+    height: 100%;
+
+    .sidebar-content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .selected-vaccines {
+    position: sticky;
+    top: 20px;
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    z-index: 10;
+
+    &__header {
+      @include section-header($secondary-color);
+      letter-spacing: 0.5px;
+    }
+
+    &__child-name {
+      font-size: 0.9rem;
+      color: $dark-gray;
+      padding: 0.5rem 1.2rem;
+      border-bottom: 1px solid $medium-gray;
+    }
+
+    &__empty {
+      padding: 2rem 1.2rem;
+      text-align: center;
+      color: $dark-gray;
+      font-style: italic;
+    }
+
+    &__list {
+      padding: 0.5rem 1.2rem;
+      max-height: 40vh;
+      overflow-y: auto;
+      @include scrollbar;
+    }
+
+    &__item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid $medium-gray;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      &-title {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      &-disease,
+      &-origin {
+        font-size: 0.85rem;
+        color: $dark-gray;
+        margin-bottom: 0.25rem;
+      }
+
+      &-price {
+        font-weight: 600;
+        color: $primary-color;
+        margin-top: 0.5rem;
+      }
+
+      &-remove {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        color: $dark-gray;
+        cursor: pointer;
+        padding: 0.25rem;
+        transition: color $transition-time;
+
+        &:hover {
+          color: #ff4d4f;
+        }
+      }
+    }
+
+    &__date-picker {
+      padding: 0.5rem 1.2rem;
+
+      &-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .ant-picker {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    &__payment-method {
+      padding: 0.5rem 1.2rem;
+
+      &-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .payment-option {
+        cursor: pointer;
+        padding: 4px;
+        border: 2px solid $medium-gray;
+        border-radius: 4px;
+        transition: all $transition-time;
+        display: inline-block;
+        margin-right: 10px;
+
+        &:hover {
+          border-color: $primary-color;
+        }
+
+        &--selected {
+          border-color: $primary-color;
+          background-color: lighten($primary-color, 45%);
+        }
+
+        .payment-image {
+          width: 80px;
+          height: 40px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &__loading {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: $dark-gray;
+      font-style: italic;
+    }
+
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      border-top: 2px dashed $medium-gray;
+      font-weight: 600;
+
+      &-label {
+        font-size: 1.1rem;
+      }
+
+      &-amount {
+        font-size: 1.2rem;
+        color: $primary-color;
+      }
+    }
+
+    &__button {
+      display: block;
+      width: calc(100% - 2.4rem);
+      margin: 0 1.2rem 1.2rem;
+      padding: 0.8rem;
+      background-color: $secondary-color;
+      color: $white;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color $transition-time;
+
+      &:hover {
+        background-color: darken($secondary-color, 5%);
+      }
+
+      &:disabled {
+        background-color: $medium-gray;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .temporary-schedules {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 1.5rem;
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+
+    &__header {
+      @include section-header(#1890ff);
+    }
+
+    &__note {
+      padding: 0.75rem 1.2rem;
+      font-size: 0.9rem;
+      color: $dark-gray;
+      background-color: #e6f7ff;
+      border-bottom: 1px solid #91d5ff;
+    }
+
+    &__type-group {
+      padding: 0.5rem 1.2rem;
+    }
+
+    &__type-title {
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+      color: #1890ff;
+    }
+
+    &__list-item {
+      border-bottom: 1px solid $light-gray;
+      padding: 0.75rem 0 !important;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &__item-details {
+      width: 100%;
+    }
+
+    &__date {
+      font-weight: 500;
+    }
+
+    &__status-tag {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .scheduled-vaccines {
+    position: relative;
+    z-index: 5;
+    margin-top: 1.5rem;
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+
+    &__header {
+      @include section-header($primary-color);
+    }
+
+    &__type-group {
+      padding: 0.5rem 1.2rem;
+    }
+
+    &__type-title {
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+      color: $primary-color;
+    }
+
+    &__list-item {
+      border-bottom: 1px solid $light-gray;
+      padding: 0.75rem 0 !important;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &__item-details {
+      width: 100%;
+    }
+
+    &__date {
+      font-weight: 500;
+    }
+
+    &__status-tag {
+      margin-left: 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .selected-vaccines {
+      position: static;
+      margin-top: 1.5rem;
+      z-index: auto;
+
+      &__list {
+        max-height: none;
+      }
+    }
+
+    .vaccine-card {
+      margin-bottom: 1rem;
+    }
+
+    .temporary-schedules,
+    .scheduled-vaccines {
+      margin-top: 1rem;
+    }
+  }
+}

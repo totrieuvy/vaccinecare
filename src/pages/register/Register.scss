@@ -1,0 +1,159 @@
+@import "../../sass/variable";
+
+.Register {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .ant-form-item-control-input-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button {
+    padding: 15px;
+    background-color: $mainColor;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($mainColor, 10%);
+    }
+  }
+
+  &__middle {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  &__back-login {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s, text-decoration 0.3s;
+    &:hover {
+      color: darkgray;
+      text-decoration: underline;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+
+    &__google-button {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 300px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: gray;
+        color: #fff;
+        border-color: gray;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .Register {
+    padding: 15px;
+    .Register {
+      max-width: 100%;
+      padding: 15px;
+    }
+  }
+
+  .Register__footer__google-button {
+    max-width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Register {
+    padding: 10px;
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__button {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .Register__footer__google-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .Register {
+    padding: 10px;
+
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .Register__middle {
+      font-size: 12px;
+    }
+
+    .Register__footer__google-button {
+      padding: 10px 20px;
+      font-size: 14px;
+      max-width: 100%;
+    }
+
+    .Register__back-login {
+      font-size: 12px;
+    }
+  }
+}

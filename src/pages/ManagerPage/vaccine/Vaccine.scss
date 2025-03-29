@@ -1,0 +1,221 @@
+.Vaccine {
+  padding: 24px;
+  background: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  .vaccine-detail {
+    .ant-descriptions-item-label {
+      font-weight: 500;
+      color: #1a73e8; // Màu giống nhãn trong form
+    }
+    .ant-descriptions-item-content {
+      color: #333;
+    }
+  }
+
+  h1 {
+    margin-bottom: 24px;
+    color: #1a73e8;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__above {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .search-section {
+      display: flex;
+      gap: 12px;
+      flex: 1;
+      min-width: 300px;
+
+      .ant-input-affix-wrapper {
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .ant-btn-primary {
+        background: #1a73e8;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #1557b0;
+        }
+      }
+    }
+
+    .action-section {
+      display: flex;
+      gap: 12px;
+
+      .export-btn {
+        background: #722ed1;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #531dab;
+        }
+      }
+
+      .ant-btn-primary {
+        background: #52c41a;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #389e0d;
+        }
+      }
+    }
+  }
+
+  .vaccine-table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .vaccine-image {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+
+      .detail-btn {
+        background: #13c2c2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #08979c;
+        }
+      }
+
+      .edit-btn {
+        background: #fa8c16;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #d46b08;
+        }
+      }
+
+      .delete-btn {
+        background: #ff4d4f;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #cf1322;
+        }
+      }
+    }
+  }
+
+  .vaccine-modal {
+    .ant-modal-content {
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .ant-form-item-label > label {
+      font-weight: 500;
+      color: #1a73e8;
+    }
+
+    .upload-button {
+      padding: 8px;
+      text-align: center;
+      color: #1a73e8;
+
+      svg {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .detail-content {
+    line-height: 1.8;
+
+    p {
+      margin: 8px 0;
+      color: #333;
+
+      strong {
+        color: #1a73e8;
+        margin-right: 8px;
+      }
+    }
+
+    .detail-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    &__above {
+      flex-direction: column;
+      align-items: stretch;
+
+      .search-section,
+      .action-section {
+        width: 100%;
+        justify-content: center;
+
+        .ant-btn {
+          width: 100%;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .vaccine-table {
+      .action-buttons {
+        flex-direction: column;
+        gap: 6px;
+
+        .ant-btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

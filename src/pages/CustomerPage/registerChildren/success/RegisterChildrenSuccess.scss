@@ -1,0 +1,117 @@
+.RegisterChildrenSuccess {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 2rem;
+
+  .success-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .checkmark-circle {
+    width: 80px;
+    height: 80px;
+    background: #52c41a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    animation: scale-up 0.5s ease-out;
+
+    .checkmark {
+      color: white;
+      font-size: 40px;
+      animation: check-appear 0.5s ease-out 0.2s both;
+    }
+  }
+
+  .ant-result {
+    padding: 1rem;
+
+    .ant-result-title {
+      color: #1a1a1a;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .ant-result-subtitle {
+      color: #666;
+      font-size: 16px;
+      margin-top: 8px;
+    }
+
+    .ant-result-icon {
+      display: none; // Hide default Result icon
+    }
+
+    .ant-result-extra {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      .ant-btn {
+        height: 40px;
+        font-size: 16px;
+        min-width: 150px;
+
+        &:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+
+  .home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1890ff;
+    margin-top: 1.5rem;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #40a9ff;
+      text-decoration: underline;
+    }
+
+    .anticon {
+      font-size: 18px;
+    }
+  }
+
+  @keyframes scale-up {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes check-appear {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

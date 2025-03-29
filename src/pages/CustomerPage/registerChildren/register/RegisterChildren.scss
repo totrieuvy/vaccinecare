@@ -1,0 +1,72 @@
+.RegisterChildren {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 2rem;
+
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      color: #666;
+      font-size: 1rem;
+    }
+  }
+
+  .ant-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    .ant-form {
+      .ant-form-item {
+        margin-bottom: 1.5rem;
+      }
+
+      .ant-input,
+      .ant-picker,
+      .ant-input-textarea {
+        border-radius: 8px;
+        padding: 8px 12px;
+      }
+
+      .ant-radio-group {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+
+        .ant-radio-button-wrapper {
+          flex: 1;
+          text-align: center;
+          border-radius: 8px;
+
+          &:first-child {
+            border-radius: 8px 0 0 8px;
+          }
+
+          &:last-child {
+            border-radius: 0 8px 8px 0;
+          }
+        }
+      }
+
+      .ant-btn {
+        height: 48px;
+        font-size: 1.125rem;
+        font-weight: 600;
+        border-radius: 8px;
+
+        &:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}

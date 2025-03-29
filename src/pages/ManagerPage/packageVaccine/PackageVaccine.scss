@@ -1,0 +1,132 @@
+.PackageVaccine {
+  padding: 24px;
+  background: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  h1 {
+    margin-bottom: 24px;
+    color: #1a73e8;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__above {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    > div {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      .ant-input {
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        width: 250px;
+      }
+
+      .ant-btn-primary {
+        background: #1a73e8;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #1557b0;
+        }
+      }
+
+      &:last-child {
+        .ant-btn-primary {
+          background: #52c41a;
+          &:hover {
+            background: #389e0d;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-table-wrapper {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .ant-btn {
+      border-radius: 6px;
+      transition: background 0.3s;
+
+      &.ant-btn-default {
+        background: #13c2c2;
+        color: white;
+        border: none;
+        &:hover {
+          background: #08979c;
+        }
+      }
+
+      &.ant-btn-primary:not(.ant-btn-dangerous) {
+        background: #fa8c16;
+        border: none;
+        &:hover {
+          background: #d46b08;
+        }
+      }
+
+      &.ant-btn-dangerous {
+        background: #ff4d4f;
+        border: none;
+        &:hover {
+          background: #cf1322;
+        }
+      }
+    }
+  }
+
+  .ant-modal {
+    .ant-modal-content {
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .ant-form-item-label > label {
+      font-weight: 500;
+      color: #1a73e8;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    &__above {
+      flex-direction: column;
+      align-items: stretch;
+
+      > div {
+        width: 100%;
+        justify-content: center;
+
+        .ant-input,
+        .ant-btn {
+          width: 100%;
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .ant-table-wrapper {
+      .ant-btn {
+        width: 100%;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
