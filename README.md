@@ -7,3 +7,5 @@
 - Doctor: View vaccination schedule of patients, vaccinate for patients and record side effects.
 - Manager: Manage vaccines, manage packages, manage manufactures, manage staff and doctor account, manage batch, internal chat with administrator.
 - Admin: View dashboard throughout chart (yearly revenue, total account, total package, total vaccine, total manufacture), manage manager, internal chat with manager.
+
+- Link  demo: https://vaccinecare.site/
